@@ -12,7 +12,7 @@ const signInSchema = z.object({
     email: z.string().email("Enter a valid email"),
     password: z.string().min(6, "At least 6 characters")
 });
-
+//test
 type signInSchema = z.infer<typeof signInSchema>
 
 export default function Signin() {
