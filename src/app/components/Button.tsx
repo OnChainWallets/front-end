@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes } from 'react'
 
 const button = tv({
     base: [
-        'min-w-20 rounded-lg px-4 py-2 text-sm font-semibold outline-none shadow-sm',
+        'rounded-lg px-4 py-2 text-sm font-semibold outline-none shadow-sm',
         'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-violet-500',
         'active:opacity-80',
     ],
@@ -31,5 +31,5 @@ export interface ButtonProps
 export function Button({ asChild, variant, className, ...props }: ButtonProps) {
 
 
-    return <button {...props} type='button' className={button({ variant, className })} />
+    return <button {...props} className={button({ variant, className })} />
 }

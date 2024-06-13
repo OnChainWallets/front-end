@@ -1,6 +1,6 @@
-import { EmailOrPasswordIncorrectError } from '@/src/domain/errors/EmailOrPasswordIncorrectError'
-import { SignInUserUsecase } from '@/src/domain/usecases/auth/signInUserUsecase'
-import { RequestHelper, RequestHelperInterface } from '@/src/utils/helpers/requestHelper'
+import { EmailOrPasswordIncorrectError } from '@/domain/errors/EmailOrPasswordIncorrectError'
+import { SignInUserUsecase } from '@/domain/usecases/auth/signInUserUsecase'
+import { RequestHelper, RequestHelperInterface } from '@/utils/helpers/requestHelper'
 
 
 export class SignInUserService implements SignInUserUsecase {
@@ -12,13 +12,13 @@ export class SignInUserService implements SignInUserUsecase {
 
   constructor(
     private readonly requestHelper: RequestHelperInterface = RequestHelper.instance
-  ) {}
+  ) { }
 
   async perform(
     params: SignInUserUsecase.Params
   ): Promise<SignInUserUsecase.Response> {
     const response = await this.requestHelper.make<SignInUserUsecase.Response>({
-      url: '/user/login',
+      url: '/users/authenticate_user',
       method: 'POST',
       data: params,
     })

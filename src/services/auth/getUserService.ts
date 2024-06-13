@@ -1,11 +1,11 @@
 
-import { GetUserUsecase } from '@/src/domain/usecases/auth/getUserUsecase'
-import { RequestHelper, RequestHelperInterface } from '@/src/utils/helpers/requestHelper'
+import { GetUserUsecase } from '@/domain/usecases/auth/getUserUsecase'
+import { RequestHelper, RequestHelperInterface } from '@/utils/helpers/requestHelper'
 
 export class GetUserService implements GetUserUsecase {
   public static instance = new GetUserService()
 
-  constructor (
+  constructor(
     private readonly requestHelper: RequestHelperInterface = RequestHelper.instance
   ) { }
 

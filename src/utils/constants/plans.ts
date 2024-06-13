@@ -6,19 +6,23 @@ export interface Plan {
             quarterly: number
             yearly: number
         }
-        benefits: {
-          blockChain: string
-          balance: string
-          extract: string
-          graph: string
-          wallet: string
-          tokens: string
-          csv?: string
-          portfolio?: string
-          support?: string
-          telegram?: string
+        benefits: Benefits
 }
+
+interface Benefits {
+        blockChain: string
+        balance: string
+        extract: string
+        graph: string
+        wallet: string
+        tokens: string
+        csv?: string
+        portfolio?: string
+        support?: string
+        telegram?: string
 }
+
+
 export const plans:Plan[] = [
     {
         name: 'Free',
@@ -30,7 +34,7 @@ export const plans:Plan[] = [
         },
         benefits: {
           blockChain: '1 block-chain',
-          balance: 'Balance of only the 200 largest tokens',
+          balance: 'Balance only 200 tokens',
           extract: 'Extract',
           graph: 'No graph',
           wallet: 'Can save wallets',
@@ -47,7 +51,7 @@ export const plans:Plan[] = [
         },
         benefits: {
           blockChain: '1 block-chain',
-          balance: 'Balance of only the 200 largest tokens',
+          balance: 'Balance only 200 tokens',
           extract: 'Extract',
           graph: 'No graph',
           wallet: 'Can save wallets',
@@ -64,7 +68,7 @@ export const plans:Plan[] = [
         },
         benefits: {
           blockChain: 'All blockchains',
-          balance: 'Balance of only the 300 largest tokens',
+          balance: 'Balance only 300 tokens',
           extract: 'Extract',
           graph: 'No graph',
           wallet: 'Can save wallets',

@@ -1,4 +1,4 @@
-import { plans } from "@/src/utils/constants/plans";
+import { plans } from "@/utils/constants/plans";
 import { CardPlan } from "./CardPlan";
 import * as Switch from '@radix-ui/react-switch';
 import { useState } from "react";
@@ -8,7 +8,7 @@ export function Plans() {
     const [yearlyPlans, setYearlyPlans] = useState(false)
 
     return (
-        <div id="section1" className="w-full xl:w-[1600px] flex flex-col justify-center items-center gap-10 py-10">
+        <div id="section1" className="w-full flex flex-col justify-center items-center gap-10 py-10">
             <p className="font-bold text-5xl leading-snug text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-violet-700">Pricing</p>
             <div className="flex flex-col justify-center items-center gap-10">
                 <div className="flex items-center gap-5">

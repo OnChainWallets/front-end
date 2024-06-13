@@ -1,6 +1,6 @@
 import { parseCookies } from 'nookies'
 import { useMutation } from '@tanstack/react-query'
-import { GetUserService } from '@/src/services/auth/getUserService'
+import { GetUserService } from '@/services/auth/getUserService'
 
 export async function getUser() {
   const { token } = parseCookies()
@@ -9,7 +9,7 @@ export async function getUser() {
   })
   return response
 }
-  
+
 export function useGetUser() {
   return useMutation({
     mutationKey: ['get-user'],
