@@ -1,16 +1,13 @@
-import { User } from "../../entities/user"
-
-
 export interface SignUpUserUsecase {
   perform(params: SignUpUserUsecase.Params): Promise<SignUpUserUsecase.Response>
 }
 
 export namespace SignUpUserUsecase {
   export type Params = {
-    name: string 
+    username: string
     email: string
-    password: string 
+    pswrd: string
   }
 
-  export type Response = User | Error
+  export type Response = number | Error
 }

@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { env } from '../config/env'
 
 export interface RequestHelperInterface {
   make<T>(
@@ -9,18 +8,18 @@ export interface RequestHelperInterface {
 
 export namespace RequestHelper {
   export namespace Make {
-    export type Params = { 
-      url: string 
-      method: string 
+    export type Params = {
+      url: string
+      method: string
       data?: unknown
     }
 
-    export type Response<T> = { 
-      statusCode: number 
-      body: T 
+    export type Response<T> = {
+      statusCode: number
+      body: T
     } | {
       statusCode: number
-      error: Error 
+      error: Error
     }
   }
 }
@@ -34,15 +33,11 @@ export class RequestHelper implements RequestHelperInterface {
     const { url, method, data } = params
 
     try {
-      const response = await axios.request({ 
-        url: `${env.NEXT_PUBLIC_API_BASE_URL}${url}`, 
+      const response = await axios.request({
+        url: `${process.env.NEXT_PUBLIC_API_BASE_URL}${url}`,
+        withCredentials: true,
         method,
-        params: method === 'GET' ? data : undefined,
         data,
-        headers:{
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${env.NEXT_PUBLIC_API_KEY}`,
-        },
       })
 
       return { statusCode: response.status, body: response.data }

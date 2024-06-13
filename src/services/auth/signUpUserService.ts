@@ -1,23 +1,23 @@
 
-import { EmailAlreadyRegisteredError } from '@/src/domain/errors/EmailAlreadyRegisteredError'
-import { SignUpUserUsecase } from '@/src/domain/usecases/auth/signUpUserUsecase'
-import { RequestHelper, RequestHelperInterface } from '@/src/utils/helpers/requestHelper'
+import { EmailAlreadyRegisteredError } from '@/domain/errors/EmailAlreadyRegisteredError'
+import { SignUpUserUsecase } from '@/domain/usecases/auth/signUpUserUsecase'
+import { RequestHelper, RequestHelperInterface } from '@/utils/helpers/requestHelper'
 
 
 export class SignUpUserService implements SignUpUserUsecase {
   public static instance = new SignUpUserService()
 
   private errorMap = new Map<number, Error>([
-    [409, new EmailAlreadyRegisteredError()]
+    [409, new EmailAlreadyRegisteredError()],
   ])
 
-  constructor (
+  constructor(
     private readonly requestHelper: RequestHelperInterface = RequestHelper.instance
   ) { }
 
   async perform(params: SignUpUserUsecase.Params): Promise<SignUpUserUsecase.Response> {
     const response = await this.requestHelper.make<SignUpUserUsecase.Response>({
-      url: '/user/create',
+      url: '/users/create_user',
       method: 'POST',
       data: params
     })

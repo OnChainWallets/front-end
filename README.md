@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 💻 Pré-requisitos
 
-## Getting Started
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Você tem uma máquina `<Windows / Linux / Mac>`
+* Você instalou a versão mais recente do `NodeJS`
 
-First, run the development server:
+<br/>
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Estrutura de Pastas
+A estrutura do projeto está organizada da seguinte forma:
+
+```
+.next/
+node_modules/
+src/
+  ├── app/
+  │   ├── (auth)/
+  │   ├── (landing)/
+  │   ├── api/
+  │   ├── components/
+  │   ├── dashboard/
+  │   │   ├── balance/
+  │   │   ├── components/
+  │   │   ├── help/
+  │   │   ├── plans/
+  │   │   ├── saved-wallets/
+  │   │   ├── search-wallets/
+  │   │   ├── settings/
+  │   │   │   ├── layout.tsx
+  │   │   ├── page.tsx
+  │   ├── globals.css
+  │   ├── layout.tsx
+  ├── assets/
+  ├── contexts/
+  ├── domain/
+  ├── hooks/
+  ├── lib/
+  ├── mocks/
+  ├── providers/
+  ├── services/
+  ├── utils/
+  │   ├── middleware.ts
+.env.example
+.env.local
+.eslintrc.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Instalando
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para instalar execute no terminal:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+npm:
+```
+npm i
+```
 
-## Learn More
+yarn:
+```
+yarn install
+```
 
-To learn more about Next.js, take a look at the following resources:
+pnpm:
+```
+pnpm i
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br/>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🚀 Rodando o projeto
 
-## Deploy on Vercel
+Primeiramente crie um arquivo ```.env.local``` na raíz do projeto e adicione as seguintes variáveis de ambiente e seus respectivos valores:
+<br/>
+<br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+# API ROUTES
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# BACK-END
+NEXT_PUBLIC_API_BASE_URL="http://127.0.0.1:8000"
+NEXT_PUBLIC_API_KEY="api-key"
+
+# STRIPE
+NEXT_PUBLIC_STRIPE_PUBLIC_KEY=""
+STRIPE_SECRET_KEY=""
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET="secret"
+PROJECT_ID="79e8e12939d28b3317fa48a7abb3c41b"
+```
+
+
+Para rodar o projeto digite no terminal:
+
+npm:
+```
+npm run dev
+```
+yarn:
+```
+yarn dev
+```
+
+pnpm:
+```
+pnpm run dev
+```
+
+<br/>
+
+
+## 🚀 Tecnologias utilizadas
+
+O projeto está desenvolvido utilizando as seguintes tecnologias:
+
+- Typescript <img width="25px" height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+- ReactJS <img width="25px" height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+- NextJS <img width="25px" height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+- TailwindCSS <img width="25px" height="25px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
