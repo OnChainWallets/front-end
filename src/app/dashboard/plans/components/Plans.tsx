@@ -19,6 +19,7 @@ export function Plans({ loadingPlans, plans, platform, planTime, setPlanTime, se
     const fetchMemberships = async () => {
         const { data } = await api.get('/api/get-plans')
         setStripePlans(data)
+        console.log(data)
     }
 
 
