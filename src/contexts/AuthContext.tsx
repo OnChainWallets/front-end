@@ -115,11 +115,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
             return console.error(error.message)
         } finally {
             setIsLoading(false)
-            setCookie(undefined, 'access_token', 'token', {
-                maxAge: 60 * 60 * 24 * 7, // 7 days
-                path: '/',
-            })
-            router.push('/dashboard')
         }
     }
 
@@ -141,11 +136,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
                         }
 
                         setUser({ ...response.user })
-                        // setCookie(undefined, 'access_token', response.accessToken, {
-                        //     maxAge: 60 * 60 * 24 * 7, // 7 days
-                        //     path: '/',
-                        // })
-                        // router.push('/dashboard')
+                        setCookie(undefined, 'access_token', response.accessToken, {
+                            maxAge: 60 * 60 * 24 * 7, // 7 days
+                            path: '/',
+                        })
+                        router.push('/dashboard')
                     },
                     onError: () => {
                         if (isErrorSignInUserByWallet) {
@@ -160,11 +155,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
             return console.error(error.message)
         } finally {
             setIsLoading(false)
-            setCookie(undefined, 'access_token', 'token', {
-                maxAge: 60 * 60 * 24 * 7, // 7 days
-                path: '/',
-            })
-            router.push('/dashboard')
         }
     }
 
