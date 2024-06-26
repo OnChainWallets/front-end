@@ -38,7 +38,6 @@ export class RequestHelper implements RequestHelperInterface {
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
-          'Origin': window.location.origin,
         },
         method,
         data,
