@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-
+import dotenv from 'dotenv'
+dotenv.config();
 export async function GET(req: NextRequest) {
 
    const sessionId = String(req.nextUrl.searchParams.get("session_id"))

@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
 import { StripePlan } from "@/domain/entities/stripe-plan";
-
+import dotenv from 'dotenv'
+dotenv.config();
 export async function GET(): Promise<NextResponse> {
     let stripePlans: StripePlan[] = [];
     let hasMore = true;
