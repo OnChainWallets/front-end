@@ -1,6 +1,5 @@
 import { z } from 'zod'
-import dotenv from 'dotenv'
-dotenv.config();
+
 const envSchema = z.object({
   NEXT_PUBLIC_BASE_URL: z.string().url(),
   NEXT_PUBLIC_API_BASE_URL: z.string().url(),
