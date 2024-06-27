@@ -2,8 +2,7 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { getCsrfToken } from "next-auth/react";
 import { SiweMessage } from "siwe";
-import dotenv from 'dotenv'
-dotenv.config();
+
 export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({

@@ -1,8 +1,7 @@
 import { stripe } from "@/lib/stripe";
 import { env } from "@/utils/config/env";
 import { NextRequest, NextResponse } from "next/server";
-import dotenv from 'dotenv'
-dotenv.config();
+
 export async function POST(req: NextRequest) {
 
     const { priceId } = await req.json()
