@@ -27,7 +27,7 @@
     "ethers": "^5.7.2",
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.376.0",
-    "next": "14.2.3",
+    "next": "13.4.0",
     "next-auth": "^4.24.7",
     "next-themes": "^0.3.0",
     "nookies": "^2.5.2",
