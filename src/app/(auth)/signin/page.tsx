@@ -46,7 +46,7 @@ export default function Signin() {
                         },
                         onError: () => {
                             if (isError) {
-                                toastMessage({ message: error.message, type: 'error' })
+                                toastMessage({ message: 'Username, Email ou Senha incorretos.', type: 'error' })
                             }
                         }
                     })

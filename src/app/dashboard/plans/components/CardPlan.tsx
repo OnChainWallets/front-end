@@ -17,6 +17,7 @@ import optimism from '@/assets/optimism.svg'
 import base from '@/assets/base.svg'
 import zksync from '@/assets/zksync.png'
 import { StripePlan } from "@/domain/entities/stripe-plan";
+import { useCryptoPlan } from "@/contexts/CryptoPlanContext";
 
 export interface Plan {
     id: number
@@ -33,6 +34,8 @@ interface CardPlanProps {
     setPlatform: (platform: string) => void
 }
 export function CardPlan({ stripePlans, plan, platform, setPlatform }: CardPlanProps) {
+
+    const { setPlanType, setPrice } = useCryptoPlan()
 
 
     function findCompatiblePlan(plan: Plan, stripePlans: StripePlan[]): string | null {
@@ -161,6 +164,10 @@ export function CardPlan({ stripePlans, plan, platform, setPlatform }: CardPlanP
 
                     <Link href='/dashboard/plans/crypto' className="w-1/2 ">
                         <Button
+                            onClick={() => {
+                                setPlanType(plan.plan_type)
+                                setPrice(plan.plan_price)
+                            }}
                             className="w-full flex justify-center items-center gap-3 hover:scale-105 transition-transform duration-300">
                             Pay with crypto
                             <Image src={btc} width={18} height={18} alt="Icon" />

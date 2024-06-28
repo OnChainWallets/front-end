@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { AuthProvider } from '../contexts/AuthContext'
 import Web3Provider from './Web3Providers'
 import { FilterProvider } from '@/contexts/FilterContext'
+import { CryptoPlanProvider } from '@/contexts/CryptoPlanContext'
 
 interface ProviderProps {
     children: ReactNode | ReactNode[] | JSX.Element | JSX.Element[]
@@ -18,7 +19,9 @@ export const Providers = ({ children }: ProviderProps) => {
             <Web3Provider>
                 <AuthProvider>
                     <FilterProvider>
-                        {children}
+                        <CryptoPlanProvider>
+                            {children}
+                        </CryptoPlanProvider>
                     </FilterProvider>
                 </AuthProvider>
             </Web3Provider>

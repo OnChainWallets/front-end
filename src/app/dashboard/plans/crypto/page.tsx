@@ -13,10 +13,14 @@ import doge from '@/assets/doge.svg'
 import ltc from '@/assets/ltc.svg'
 import dai from '@/assets/dai.svg'
 import bch from '@/assets/bch.svg'
+import { useCryptoPlan } from "@/contexts/CryptoPlanContext";
 
 
 
 export default function Crypto() {
+
+    const { price } = useCryptoPlan()
+
 
     const [crypto, setCrypto] = useState<string | null>(null)
 
@@ -46,7 +50,7 @@ export default function Crypto() {
                             <div className="w-full flex justify-between items-center">
                                 <p className="text-lg font-semibold">Total</p>
                                 <div className="px-1 p-3 font-bold text-base">
-                                    $100.00
+                                    ${price}
                                 </div>
                             </div>
                         </div>
