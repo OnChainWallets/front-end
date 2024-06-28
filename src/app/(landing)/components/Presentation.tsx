@@ -8,7 +8,7 @@ export function Presentation() {
         <div className="mt-40 lg:mt-0 grid grid-cols-2">
             <div className="w-full lg:w-2/3 space-y-10 col-span-2 lg:col-span-1 p-6 lg:p-0">
                 <div className="flex flex-col justify-center items-center lg:items-start">
-                    <p className="font-bold text-5xl leading-snug text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-violet-700 text-center lg:text-start">Onchain Data Platform Trusted by the Best</p>
+                    <p className="font-bold text-5xl leading-snug text-violet-500 text-center lg:text-start">Onchain Data Platform Trusted by the Best</p>
                     <div className="flex justify-start items-center gap-2 mt-2">
                         <a href="https://www.instagram.com/" target="_blank" rel="external" ><Instagram className="w-6 h-6 hover:text-violet-500 transition-all duration-300" /></a>
                         <a href="https://www.twitter.com/" target="_blank" rel="external" type="button"><Twitter className="w-6 h-6 hover:text-violet-500 transition-all duration-300" /></a>

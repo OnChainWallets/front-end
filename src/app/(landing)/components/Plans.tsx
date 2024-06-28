@@ -9,7 +9,7 @@ export function Plans() {
 
     return (
         <div id="section1" className="w-full flex flex-col justify-center items-center gap-10 py-10">
-            <p className="font-bold text-5xl leading-snug text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-violet-700">Pricing</p>
+            <p className="font-bold text-5xl leading-snug text-violet-500">Pricing</p>
             <div className="flex flex-col justify-center items-center gap-10">
                 <div className="flex items-center gap-5">
                     <label className={`text-xl font-semibold leading-none ${!yearlyPlans ? 'text-violet-500 transition-colors duration-300' : 'text-zinc-300 '}`} htmlFor="plans">
