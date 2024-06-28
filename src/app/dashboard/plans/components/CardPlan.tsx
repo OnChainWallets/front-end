@@ -35,7 +35,7 @@ interface CardPlanProps {
 }
 export function CardPlan({ stripePlans, plan, platform, setPlatform }: CardPlanProps) {
 
-    const { setPlanType, setPrice } = useCryptoPlan()
+    const { setPlanType, setPrice, setPlanBlockchain } = useCryptoPlan()
 
 
     function findCompatiblePlan(plan: Plan, stripePlans: StripePlan[]): string | null {
@@ -167,6 +167,7 @@ export function CardPlan({ stripePlans, plan, platform, setPlatform }: CardPlanP
                             onClick={() => {
                                 setPlanType(plan.plan_type)
                                 setPrice(plan.plan_price)
+                                setPlanBlockchain(plan.plan_block_chain)
                             }}
                             className="w-full flex justify-center items-center gap-3 hover:scale-105 transition-transform duration-300">
                             Pay with crypto
