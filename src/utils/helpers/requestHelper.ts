@@ -36,9 +36,6 @@ export class RequestHelper implements RequestHelperInterface {
       const response = await axios.request({
         url: `${process.env.NEXT_PUBLIC_API_BASE_URL}${url}`,
         withCredentials: true,
-        headers: {
-          'Content-Type': 'application/json',
-        },
         method,
         data,
       })

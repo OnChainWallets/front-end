@@ -19,7 +19,7 @@ const signInSchema = z.object({
     email: z.union([z.string().email("Enter a valid email"), z.string().max(0)]).optional(),
     password: z.string().min(6, "At least 6 characters")
 });
-//test
+
 type signInSchema = z.infer<typeof signInSchema>
 
 export default function Signin() {

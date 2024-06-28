@@ -3,7 +3,7 @@ import { env } from "@/utils/config/env";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    //test
+
     const { priceId } = await req.json()
 
     if (req.method !== 'POST') {
