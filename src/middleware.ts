@@ -18,7 +18,7 @@ export function middleware(request: NextRequest) {
   const isPathPrivate = privatePaths.some((route) => path.startsWith(route))
   const isAuthPath = authPaths.some((route) => path.startsWith(route))
 
-  if (isAuthenticated) {
+  if (!isAuthenticated) {
     if (isPathPrivate) {
       return NextResponse.redirect(new URL('/', request.url))
     }
