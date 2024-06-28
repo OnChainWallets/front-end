@@ -105,7 +105,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 },
                 onError: () => {
                     if (isError) {
-                        toastMessage({ message: error.message, type: 'error' })
+                        toastMessage({ message: 'Username, Email or Password are incorrect.', type: 'error' })
                     }
                 }
             })

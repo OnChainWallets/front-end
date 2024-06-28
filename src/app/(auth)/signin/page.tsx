@@ -46,7 +46,7 @@ export default function Signin() {
                         },
                         onError: () => {
                             if (isError) {
-                                toastMessage({ message: 'Username, Email ou Senha incorretos.', type: 'error' })
+                                toastMessage({ message: 'Erro ao criar usuário.', type: 'error' })
                             }
                         }
                     })
@@ -87,6 +87,7 @@ export default function Signin() {
                     <InputRoot>
                         <InputControl id="username" type="text" placeholder='johndoe' {...register("username")} />
                     </InputRoot>
+                    <p className="text-sm text-red-500 font-semibold">{errors.username?.message}</p>
                 </div>
 
                 <div className="flex flex-col gap-3 w-1/2">
@@ -96,6 +97,7 @@ export default function Signin() {
                     <InputRoot>
                         <InputControl id="email" type="email" placeholder='johndoe@email.com' {...register("email")} />
                     </InputRoot>
+                    <p className="text-sm text-red-500 font-semibold">{errors.email?.message}</p>
                 </div>
 
                 <div className="flex flex-col gap-3 py-3 w-1/2">
