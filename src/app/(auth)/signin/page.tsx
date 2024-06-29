@@ -34,23 +34,26 @@ export default function Signin() {
         if (session?.user?.name) {
             mutateGetUserByWallet({ user_wallet: session.user.name }, {
                 onSuccess: (data) => {
-                    signInWithWallet(session)
-                },
-                onError: () => {
-                    mutateSignUpUserByWallet({
-                        user_wallet: session.user?.name!
-                    }, {
-                        onSuccess: () => {
-                            toastMessage({ message: 'Usuário criado com sucesso!', type: 'success' })
-                            signInWithWallet(session)
-                        },
-                        onError: () => {
-                            if (isError) {
-                                toastMessage({ message: 'Erro ao criar usuário.', type: 'error' })
+                    if (!(data instanceof Error)) {
+                        signInWithWallet(session)
+                    }
+                    else {
+                        mutateSignUpUserByWallet({
+                            user_wallet: session.user?.name!
+                        }, {
+                            onSuccess: () => {
+                                toastMessage({ message: 'Usuário criado com sucesso!', type: 'success' })
+                                signInWithWallet(session)
+                            },
+                            onError: () => {
+                                if (isError) {
+                                    toastMessage({ message: 'Erro ao criar usuário.', type: 'error' })
+                                }
                             }
-                        }
-                    })
-                }
+                        })
+                    }
+
+                },
             })
 
         }
